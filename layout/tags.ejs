@@ -5,7 +5,9 @@
 <main class="app-body">
   <div id="tag-cloud">
     <% site.tags.map(function(tag, index) { %>
-      <a class="tag<%= Math.round(Math.random() * 3) %>" data-name="tag-<%= index %>"><%= tag.name %></a>
+      <a href="<%- url_for('tags/' + tag.name) %>" class="tag<%= Math.round(Math.random() * 3) %>" data-name="tag-<%= index %>">
+        <%= tag.name %>
+      </a>
     <% }) %>
   </div>
   <% site.tags.map(function(tag, index){ %>
@@ -17,7 +19,7 @@
             <a href="<%- config.root %><%- post.path %>"><%- post.title || "Untitled" %></a>
           </li>
         </ul>
-        <% }) %>
+      <% }) %>
     </div>
     <% }) %>
 </main>

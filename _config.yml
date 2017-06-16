@@ -13,7 +13,8 @@ menu:
 
 # highlight
 highlight:
-  tomorrow
+  github-gist
+  #tomorrow
 
 # gitment
 gitment_owner: eneim
