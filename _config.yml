@@ -13,6 +13,9 @@ menu:
 
 # highlight
 highlight:
+  #default
+  #github
+  #atom-one-light
   github-gist
   #tomorrow
 
