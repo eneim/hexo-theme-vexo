@@ -1,13 +1,27 @@
 @import "_config"
+@font-face
+  font-family: 'Source Sans Pro'
+  src: url('../fonts/SourceSansPro.ttf')
+
+::selection
+  background: color-primary
+  color: color-white
+
+::-webkit-scrollbar
+  display: none
 
 body
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Avenir', Helvetica, Arial, sans-serif
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: none
   position: relative
   height: 100%
   margin: 0
   color: color-dark
+  font-size: 16px
+  @media m-mobile
+    font-size: 15px
 
 ol, ul, form, p
   margin: 0
@@ -16,6 +30,9 @@ a
   text-decoration: none
   color: color-primary
   cursor: pointer
+
+p
+  word-spacing: 0.05em
 
 pre
   overflow-x: auto
@@ -37,16 +54,17 @@ pre
   margin: 15px 0
   span
     &:first-child
-      font-size: .8em
+      margin-right: 10px
       font-weight: 600
 
 .tag-code
   font-family: 'Roboto Mono', Monaco, courier, monospace
-  font-size: 0.8em
+  font-size: .8em
+  display: inline-block
   background-color: color-background
   color: #bf616a
   padding: 3px 5px
-  margin: 0 2px
+  margin: 0 2px 5px 0
   border-radius: 2px
   white-space: nowrap
 
@@ -56,7 +74,7 @@ pre
     margin-top: 80px
 
 h2.article-head
-  font-size: 1.5em
+  font-size: 1.6em
   margin-bottom: 0
 
 .article-head > a
@@ -66,16 +84,15 @@ h2.article-head
 
 .article-date
   color: color-gray
-  font-size: 12px
   margin: 10px 0
+  font-size: 0.9em
 
 .article-summary
-  margin: 20px 0
+  margin: 10px 0
   color: color-dark
   line-height: 1.5em
 
 .more
-  font-size: 14px
   font-weight: 600
 
 #article-banner
@@ -90,16 +107,15 @@ h2.article-head
     padding: 80px 10px 25px 10px
   h2
     margin: .4em 0
-    font-size: 40px
+    font-size: 2.2em
     color: color-white
     text-shadow: 0 0 40px color-dark
     opacity: 0
     transform: translateY(-20px)
     transition: all 0.4s
     @media m-mobile
-      font-size: 30px
+      font-size: 2em
   .post-date
-    font-size: 14px
     margin: 10px 0 20px 0
     color: color-white
     opacity: 0
@@ -134,15 +150,15 @@ h2.article-head
     margin-top: 0
 
 .money-like
-  padding: 2rem 0 3rem
+  padding: 2em 0 3em
   .reward-btn
     cursor: pointer
-    font-size: 1.6rem
-    line-height: 3.2rem
+    font-size: 1.6em
+    line-height: 2em
     position: relative
     display: block
-    width: 3.2rem
-    height: 3.2rem
+    width: 2em
+    height: 2em
     margin: 0 auto
     padding: 0
     text-align: center
@@ -153,12 +169,12 @@ h2.article-head
     background: linear-gradient(to bottom, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%)
   .money-code
     position: absolute
-    top: -10rem
+    top: -7em
     left: 50%
     display: none
-    width: 16rem
-    height: 8rem
-    margin-left: -9rem
+    width: 10.5em
+    height: 5.5em
+    margin-left: -5.9em
     padding: 10px 15px
     border: 1px solid color-border
     background: color-white
@@ -166,36 +182,31 @@ h2.article-head
     border-radius: 4px
     span
       display: inline-block
-      width: 7rem
-      height: 10rem
+      width: 4.5em
+      height: 4.5em
     .alipay-code
       float: left
       .code-image
         background-image: url(alipay-url)
         background-size: contain
-        width: 7rem
-        height: 7rem
+        background-repeat: no-repeat
+        width: 4.5em
+        height: 4.5em
     .wechat-code
       float: right
       .code-image
         background-image: url(wechat-url)
         background-size: contain
-        width: 7rem
-        height: 7rem
+        background-repeat: no-repeat
+        width: 4.5em
+        height: 4.5em
     b
-      font-size: 12px
+      font-size: .5em
       line-height: 24px
       display: block
       margin: 0
       text-align: center
       color: color-dark
-    img
-      display: inline-block
-      float: left
-      width: 7rem
-      width: 7rem
-      margin: 0 auto
-      border: 0
 
 .notice
   font-size: 12px
@@ -210,8 +221,8 @@ h2.article-head
   text-align: center
   border-bottom: 1px dashed color-border
   canvas
-    width: 8rem
-    height: 8rem
+    width: 8em
+    height: 8em
     padding: 5px
     box-shadow: 0 0 1px color-shadow
 
@@ -228,6 +239,7 @@ h2.article-head
   background-color: color-primary
   border-radius: 20px
   transition: opacity .5s ease
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 3px 3px 0 rgba(0,0,0,.24)
 
 .arrow-icon
   background-image: url(arrow-url)
@@ -270,3 +282,5 @@ h2.article-head
 @import "_partial/markdown"
 @import "_partial/tags"
 @import "_partial/archive"
+@import "_partial/about"
+@import "_partial/project"

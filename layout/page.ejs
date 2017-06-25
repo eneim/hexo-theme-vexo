@@ -25,6 +25,11 @@
     $('.header').removeClass('fixed-header');
   })();
 
+  // error image
+  $(".markdown-content img").on('error', function() {
+    $(this).attr('src', 'http://yanm1ng.cn/error-img.png') 
+  })
+
   var disqus_config = function () {
         this.page.url = '<%= page.permalink %>';
         this.page.identifier = '<%= page.path %>';

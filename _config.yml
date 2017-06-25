@@ -1,7 +1,7 @@
 # menu
 author: eneim # 作者
 description: "eneim's blog"
-keyword: the simple, the best # seo keyword
+keyword: hexo-theme, vuejs
 
 excerpt_link: Read more
 
@@ -10,6 +10,8 @@ menu:
  Tags: /tags/
  Archives: /archives/
  Github: https://github.com/eneim
+ # Projects: /project/
+ About: /about/
 
 # highlight
 highlight:
@@ -27,3 +29,8 @@ gitment_oauth_secret: c20bc1d4b284e3219213dd8c4bd8cb0ab70c566f
 
 # Disqus
 disqus_shortname: eneim
+
+about: 
+  banner: http://68.media.tumblr.com/1d81646b36cefa01093981368ad2ed93/tumblr_ncgnff0UOb1rsj2h0o7_1280.jpg
+  avatar: https://www.gravatar.com/avatar/f8ca3e94570e4dc117f34563687a3b09?s=360
+  description: the simple, the best

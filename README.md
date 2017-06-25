@@ -4,7 +4,7 @@
 
 ## Intro
 
-![](http://ww1.sinaimg.cn/large/006tKfTcgy1fggf5kinjcj30m80dwact.jpg)
+![](http://file.muyutech.com/vexo.png)
 
 ## Demo
 
@@ -66,10 +66,32 @@ tags:
 ```
 
 ## Change Log  
+**2017-06-25** 
+* Image load `onerror` replace default image
+* Fixed bugs
+
+**2017-06-23** 
+* Add project page to show github project
+* Fixed share url error
+* Support markdown `table` & `hr`
+
+**2017-06-20**  
+* Add personal link icons, support: 
+  * github 
+  * zhihu 
+  * twitter 
+  * weibo
+* Fixed bugs
+
+**2017-06-15**  
+* Add personal about page
+* Replace font-family
+* Ignore text-autosizer/font-boosting on mobile-device
+* Fixed bugs
 
 **2017-06-12**  
 * Add enter-out transition
-* Fixed bugs
+* Fixed bugs
 
 **2017-06-11**
 * Add archive page
@@ -98,6 +120,17 @@ How to use Gitment ? [See](https://imsun.github.io/gitment/)
 You can replace your own Alipay/Wechat qrcode in `themes/source/css/images` 
 
 Here the name must same as `alipay.jpg` or `wechat.jpg`.
+
+## Links
+
+You can easily add your social account by just adding your settings into `_config.yml`
+```
+# Links
+weibo_username: your_weibo_account
+twitter_username: your_twitter_account
+github_username: your_github_account
+zhihu_username: your_zhihu_account
+```
 
 ## About
 
