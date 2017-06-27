@@ -10,7 +10,7 @@
           <% if (url_for(theme.menu[name]) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[name]) == '/' && is_home())) { %>
             <a href="<%- url_for(theme.menu[name]) %>" class="item-link active"><%- name %></a>
           <% } else { %>
-            <a href="<%- url_for(theme.menu[name]) %>" class="item-link"><%- name %></a>
+            <a href="<%- url_for(theme.menu[name]) %>" class="item-link" target="blank"><%- name %></a>
           <% } %>
         </li>
       <% } %>
