@@ -18,6 +18,11 @@
   </article>
 </main>
 
+<% if (page.hasYoutubeVideo) { %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.2.0/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.4.0/Youtube.js"></script>
+<% } %>
+
 <script>
   (function () {
     var url = '<%= config.url %>/<%= page.path %>';

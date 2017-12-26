@@ -10,8 +10,8 @@
       <%= config.title %>
     <% } %>
   </title>
-  <% if (theme.google_site_verification) { %>
-    <meta name="google-site-verification" content="<%= theme.google_site_verification %>" />
+  <% if (config.google_site_verification) { %>
+    <meta name="google-site-verification" content="<%= config.google_site_verification %>" />
   <% } %>
 
 
@@ -20,4 +20,6 @@
   <%- css('css/style') %>
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <link href="//vjs.zencdn.net/6.2.0/video-js.min.css" rel="stylesheet">
+
 </head>
