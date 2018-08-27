@@ -62,6 +62,14 @@
     $('html, body').animate({ scrollTop: 0 }, 600)
   })
 
+  $(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 72
+    }, 300);
+  });
+
   document.addEventListener('scroll', function () {
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
     var headerH = header.height()

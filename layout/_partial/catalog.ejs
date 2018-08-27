@@ -2,7 +2,7 @@
   <div class="toc-main">
     <strong class="toc-title">Table of contents</strong>
     <% if (toc(page.content) !== ""){ %>
-      <%- toc(page.content, { "class": "toc-nav", "list_number": false }) %>
+      <%- toc(page.content, { "class": "toc-nav", "list_number": false, "max_depth": 3 }) %>
     <% } else { %>
       <ol class="nav"><%= __('none') %></ol>
     <% } %>

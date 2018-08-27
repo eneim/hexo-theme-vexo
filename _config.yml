@@ -1,4 +1,4 @@
-debug: false
+debug: true
 # menu
 author: eneim # 作者
 description: "eneim's blog"
