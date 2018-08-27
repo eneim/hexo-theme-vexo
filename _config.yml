@@ -1,9 +1,9 @@
 debug: true
 # menu
 author: eneim # 作者
-description: "eneim's blog"
+description: "eneim's blog | the simple, the best"
 keyword: hexo-theme, vuejs
-favicon: 
+favicon: /source/css/logo
 
 excerpt_link: Read more
 
@@ -34,20 +34,31 @@ about:
 catalog: true
 
 # donate
-## donate: true
+donate: true
+
+# qrcode
+qrcode: true
 
 # comment
 # you can set gitment or uyan
 ## comment: gitment
+# you can set gitment, uyan or disqus
 
 # gitment
-gitment_owner: eneim
-gitment_repo: eneim.github.io
-gitment_oauth_id: b0a642955d0041f4e008
-gitment_oauth_secret: c20bc1d4b284e3219213dd8c4bd8cb0ab70c566f
+# gitment_owner: eneim
+# gitment_repo: eneim.github.io
+# gitment_oauth_id: b0a642955d0041f4e008
+# gitment_oauth_secret: c20bc1d4b284e3219213dd8c4bd8cb0ab70c566f
 
 # Disqus
 disqus_shortname: eneim
 
-# uyan
+# uyan config
 # if you want to use uyan as your blog comment, plz remove/comment out gitment config
+baidu_id: 
+
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
