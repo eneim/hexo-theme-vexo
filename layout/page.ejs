@@ -16,39 +16,29 @@
         <%- partial('_partial/tag', { tags: page.tags }) %>
       </div>
     <% } %>
-    <div id="disqus_thread"></div>
-    <!-- Tags END -->
-    <!-- NAV START -->
-    <%- partial('_partial/nav') %>
-    <!-- NAV END -->
-    <!-- 打赏 START -->
-    <% if (theme.donate) { %>
-      <div class="money-like">
-        <div class="reward-btn">
-          Like
-          <span class="money-code">
-            <span class="alipay-code">
-              <div class="code-image"></div>
-              <b>Donate Paypal</b>
-            </span>
-            <span class="wechat-code">
-              <div class="code-image"></div>
-              <b>Donate Kyash</b>
-            </span>
-          </span>
-        </div>
-        <p class="notice">If you feel that my article is helpful, please buy me a cup of coffee <3.</p>
-      </div>
-    <% } %>
-    <!-- 打赏 END -->
-    <!-- 二维码 START -->
+    <!-- Share START -->
     <% if (theme.qrcode) { %>
       <div class="qrcode">
         <canvas id="share-qrcode"></canvas>
         <p class="notice">Scan the QR code to share this article</p>
       </div>
     <% } %>
-    <!-- 二维码 END -->
+    <!-- Share END -->
+    <!-- Donate START -->
+    <% if (theme.donate) { %>
+      <div class="money-like">
+        <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
+        <script type='text/javascript'>
+          kofiwidget2.init('Feel good for a Koffee? ^^!', '#6e61ab', 'A342OWW');kofiwidget2.draw();
+        </script> 
+      </div>
+    <% } %>
+    <!-- Donate END -->
+    <div id="disqus_thread"></div>
+    <!-- Tags END -->
+    <!-- NAV START -->
+    <%- partial('_partial/nav') %>
+    <!-- NAV END -->
     <% if (theme.comment === 'gitment') { %>
       <!-- Gitment START -->
       <div id="comments"></div>
@@ -75,62 +65,61 @@
 </main>
 
 <% if (page.hasYoutubeVideo) { %>
-  <style>
-    .youtube-player {
-        position: relative;
-        padding-bottom: 56.23%;
-        /* Use 75% for 4:3 videos */
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-        background: #000;
-        margin: 5px;
-    }
-    
-    .youtube-player iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        background: transparent;
-    }
-    
-    .youtube-player img {
-        bottom: 0;
-        display: block;
-        left: 0;
-        margin: auto;
-        max-width: 100%;
-        width: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
-        border: none;
-        height: auto;
-        cursor: pointer;
-        -webkit-transition: .4s all;
-        -moz-transition: .4s all;
-        transition: .4s all;
-    }
-    
-    .youtube-player img:hover {
-        -webkit-filter: brightness(75%);
-    }
-    
-    .youtube-player .play {
-        height: 72px;
-        width: 72px;
-        left: 50%;
-        top: 50%;
-        margin-left: -36px;
-        margin-top: -36px;
-        position: absolute;
-        background: url("//i.imgur.com/TxzC70f.png") no-repeat;
-        cursor: pointer;
-    }
-
+<style>
+  .youtube-player {
+      position: relative;
+      padding-bottom: 56.23%;
+      /* Use 75% for 4:3 videos */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin: 5px;
+  }
+  
+  .youtube-player iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background: transparent;
+  }
+  
+  .youtube-player img {
+      bottom: 0;
+      display: block;
+      left: 0;
+      margin: auto;
+      max-width: 100%;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      height: auto;
+      cursor: pointer;
+      -webkit-transition: .4s all;
+      -moz-transition: .4s all;
+      transition: .4s all;
+  }
+  
+  .youtube-player img:hover {
+      -webkit-filter: brightness(75%);
+  }
+  
+  .youtube-player .play {
+      height: 72px;
+      width: 72px;
+      left: 50%;
+      top: 50%;
+      margin-left: -36px;
+      margin-top: -36px;
+      position: absolute;
+      background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+      cursor: pointer;
+  }
 </style>
 
 <script>
@@ -138,39 +127,38 @@
 /* Light YouTube Embeds by @labnol */
 /* Web: http://labnol.org/?p=27941 */
 /* https://www.labnol.org/internet/light-youtube-embeds/27941/ */
-  document.addEventListener("DOMContentLoaded",
-      function() {
-          var div, n,
-              v = document.getElementsByClassName("youtube-player");
-          for (n = 0; n < v.length; n++) {
-              div = document.createElement("div");
-              div.setAttribute("data-id", v[n].dataset.id);
-              div.setAttribute("data-start", v[n].dataset.start);
-              div.setAttribute("data-end", v[n].dataset.end);
-              div.innerHTML = ytThumb(v[n].dataset.id);
-              div.onclick = ytIframe;
-              v[n].appendChild(div);
-          }
-      });
+  document.addEventListener("DOMContentLoaded", function() {
+    var div, n,
+      v = document.getElementsByClassName("youtube-player");
+    for (n = 0; n < v.length; n++) {
+      div = document.createElement("div");
+      div.setAttribute("data-id", v[n].dataset.id);
+      div.setAttribute("data-start", v[n].dataset.start);
+      div.setAttribute("data-end", v[n].dataset.end);
+      div.innerHTML = ytThumb(v[n].dataset.id);
+      div.onclick = ytIframe;
+      v[n].appendChild(div);
+    }
+  });
 
   function ytThumb(id) {
-      var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
-          play = '<div class="play"></div>';
-      return thumb.replace("ID", id) + play;
+    var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+      play = '<div class="play"></div>';
+    return thumb.replace("ID", id) + play;
   }
 
   function ytIframe() {
-      var iframe = document.createElement("iframe");
-      var embed = "https://www.youtube.com/embed/ID?autoplay=1";
-      if (this.dataset.start && this.dataset.end) {
-        embed = embed.concat("&start=VID_START&end=VID_END")
-        .replace("VID_START", this.dataset.start)
-        .replace("VID_END", this.dataset.end)
-      }
-      iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
-      iframe.setAttribute("frameborder", "0");
-      iframe.setAttribute("allowfullscreen", "1");
-      this.parentNode.replaceChild(iframe, this);
+    var iframe = document.createElement("iframe");
+    var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+    if (this.dataset.start && this.dataset.end) {
+      embed = embed.concat("&start=VID_START&end=VID_END")
+      .replace("VID_START", this.dataset.start)
+      .replace("VID_END", this.dataset.end)
+    }
+    iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "1");
+    this.parentNode.replaceChild(iframe, this);
   }
 })();
 </script>
@@ -225,19 +213,24 @@
     })
   })();
   
-  var disqus_config = function () {
-      this.page.url = '<%= page.permalink %>';
-      this.page.identifier = '<%= page.path %>';
-      this.page.title = '<%= page.title %>';
-  };
+  // qrcode
+  var qr = new QRious({
+    element: document.getElementById('share-qrcode'),
+    value: document.location.href
+  });
 
-  (function() {
-  var d = document, s = d.createElement('script');
-  s.src = '//<%= theme.disqus_shortname %>.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
+  // var disqus_config = function () {
+  //     this.page.url = '<%= page.permalink %>';
+  //     this.page.identifier = '<%= page.path %>';
+  //     this.page.title = '<%= page.title %>';
+  // };
 
+  // (function() {
+  // var d = document, s = d.createElement('script');
+  // s.src = '//<%= theme.disqus_shortname %>.disqus.com/embed.js';
+  // s.setAttribute('data-timestamp', +new Date());
+  // (d.head || d.body).appendChild(s);
+  // })();
 </script>
 
 <script>
