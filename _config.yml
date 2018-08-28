@@ -3,7 +3,7 @@ debug: true
 author: eneim # 作者
 description: "eneim's blog | the simple, the best"
 keyword: hexo-theme, vuejs
-favicon: /source/css/logo
+favicon:
 
 excerpt_link: Read more
 
